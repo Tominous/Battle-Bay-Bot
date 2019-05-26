@@ -145,7 +145,7 @@ class utility ():
         embed.add_field (name = 'bot version', value = self.bot.botVersion, inline = true)
         embed.add_field (name = 'Discord.py Version', value = discord .__ version__, inline = True)
         embed.add_field (name = 'Python Version', value = platform.python_version (), inline = True)
-        # embed.add_field (name = 'Memory Usage', value = f '{round (memory_usage (-1) [0], 3)} MB', inline = True)
+         embed.add_field (name = 'Memory Usage', value = f '{round (memory_usage (-1) [0], 3)} MB', inline = True)
         embed.add_field (name = 'operating system', value = f '{platform.system ()} {platform.release ()} {platform.version ()}', inline = false)
         await ctx.send ('**: information_source: ** Information about this bot:', embed = embed)
 
@@ -158,25 +158,25 @@ class utility ():
         delta = int (delta.total_seconds () * 1000)
         await pong.edit (content = f ': ping_pong: Pong! ({delta} ms) \ n * Discord WebSocket Latency: {round (self.bot.latency, 5)} ms *')
 
-    # @ commands.command ()
-    # @ commands.cooldown (1, 2, commands.cooldowns.BucketType.guild)
-    # async def github (self, ctx):
-    # '' 'In progress' ''
-    # url = 'https://api.github.com/repos/Der-Eddy/discord_bot/stats/commit_activity'
-    # async with aiohttp.get (url) as r:
-    # if r.status == 200:
-    # content = await r.json ()
-    # commitCount = 0
-    # for week in content:
-    # commitCount + = week ['total']
-    #
-    # embed = discord.Embed (title = 'GitHub Repo Stats', type = 'rich', color = 0xf1c40f) #Golden
-    # embed.set_thumbnail (url = 'https: //assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png')
-    # embed.add_field (name = 'Commits', value = commitCount, inline = true)
-    # embed.add_field (name = 'Link', value = 'https: //github.com/Der-Eddy/discord_bot')
-    # await ctx.send (embed = embed)
-    # else:
-    # await ctx.send (': x: Could not access the GitHub API \ nhttps: //github.com/Der-Eddy/discord_bot')
+     @ commands.command ()
+     @ commands.cooldown (1, 2, commands.cooldowns.BucketType.guild)
+     async def github (self, ctx):
+     '' 'In progress' ''
+     url = 'https://api.github.com/repos/Der-Eddy/discord_bot/stats/commit_activity'
+     async with aiohttp.get (url) as r:
+     if r.status == 200:
+     content = await r.json ()
+     commitCount = 0
+     for week in content:
+     commitCount + = week ['total']
+    
+     embed = discord.Embed (title = 'GitHub Repo Stats', type = 'rich', color = 0xf1c40f) #Golden
+     embed.set_thumbnail (url = 'https: //assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png')
+     embed.add_field (name = 'Commits', value = commitCount, inline = true)
+     embed.add_field (name = 'Link', value = 'https: //github.com/Der-Eddy/discord_bot')
+     await ctx.send (embed = embed)
+     else:
+     await ctx.send (': x: Could not access the GitHub API \ nhttps: //github.com/Der-Eddy/discord_bot')
 
     @ Commands.command (aliases = [ 'info'])
     async def about (self, ctx):
@@ -612,7 +612,7 @@ class utility ():
         if votecount.lower () == 'bool':
             emote_list = ['✅', '❌']
         elif votecount in ['2', '3', '4', '5', '6', '7', '8', '9', '10']:
-            #emotes = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']
+            emotes = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']
             #for whatever reason, the above will not work
             emotes = ['1 \ u203', '2 \ u203', '3 \ u203', '4 \ u203', '5 \ u203', '6 \ u203', '7 \ u203', '8 \ u203' '9 \ u203', '\ U0001f51f']
             emote_list = []
